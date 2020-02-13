@@ -1,0 +1,12 @@
+<h3>Welcome to RepLog, <%=current_user.username%>!</h3>
+
+<br><br>
+
+<% if @customers.empty? %>
+    <p>No Customers to Display<p>
+<% else %>
+    <% @customers.each do |customer| %>
+        <h4><a href="customers/<%=customer.id%>"><%=customer.name%></h4>
+    <% end %>
+<% end %>
+
