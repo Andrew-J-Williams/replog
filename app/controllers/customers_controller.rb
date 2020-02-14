@@ -46,4 +46,32 @@ class CustomersController < ApplicationController
         end
     end
 
+    patch '/customers/:id' do
+        if logged_in?
+          @customer = Customer.find_by(:id => params[:id])
+          @customer.name = params[:name]
+          @customer.address = params[:address]
+          @customer.phone = params[:phone]
+          @customer.date_created = params[:date_created]
+          @customer.note = params[:note]
+          if @customer.save
+            redirect to '/customers'
+          else
+            redirect to "/customers/#{@customer.id}/edit"
+          end
+        else
+            redirect to '/'
+        end
+    end
+
+    post '/tweets/:id/delete' do
+        if logged_in?
+          @tweet = Tweet.find_by(params[:id])
+          @tweet.delete
+          redirect to '/tweets'
+        else
+          redirect to '/login'
+        end
+    end
+
 end

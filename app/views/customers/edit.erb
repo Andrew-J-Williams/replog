@@ -1,0 +1,11 @@
+<h2> Edit Customer </h2>
+
+<form method="post" action="/customers/<%=@customer.id%>">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <input type="text" name="name" value="<%= @customer.name %>">
+  <input type="text" name="address" value="<%= @customer.address %>">
+  <input type="text" name="phone" value="<%= @customer.phone %>">
+  <input type="text" name="date_created" value="<%= @customer.date_created %>">
+  <input type="text" name="note" value="<%= @customer.note %>">
+  <input id="submit" type="submit" value="Submit">
+</form>
