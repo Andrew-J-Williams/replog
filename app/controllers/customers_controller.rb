@@ -64,11 +64,11 @@ class CustomersController < ApplicationController
         end
     end
 
-    post '/tweets/:id/delete' do
+    post '/customers/:id/delete' do
         if logged_in?
-          @tweet = Tweet.find_by(params[:id])
-          @tweet.delete
-          redirect to '/tweets'
+          @customer = Customer.find_by(params[:id])
+          @customer.delete
+          redirect to '/customers'
         else
           redirect to '/login'
         end
