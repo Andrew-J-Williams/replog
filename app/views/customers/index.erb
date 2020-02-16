@@ -1,24 +1,19 @@
-<div class="wrapper_user_portal">
-    <h3 class="current_user"><%=current_user.username%></h3>
-
-    <br><br>
+<div class="wrapper_user">
+    
+    <h3 class="user_name"><%=current_user.username%></h3>
+    <h5 class="user_name">(User ID: <%=current_user.id%>)</h5>
 
     <% if @customers.empty? %>
         <p>No Customers to Display<p>
     <% else %>
         <% @customers.each do |customer| %>
-            <h4><a href="customers/<%=customer.id%>"><%=customer.name%></h4>
+            <a href="customers/<%=customer.id%>" class="customers"><%=customer.name%><br><br>
         <% end %>
     <% end %>
 
     <br><br>
-
-    <form action="/customers/new">
-        <button type="submit">Create Customer</button>
-    </form>
-
-    <br><br>
-
-    <a href="/logout"><button>Log Out</button></a>
+    
+    <a href="/customers/new"><button class="sign_up">Create Customer</button></a>
+    <a href="/logout"><button class="sign_up">Log Out</button></a>
 
 </div>
