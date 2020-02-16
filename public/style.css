@@ -26,6 +26,12 @@ body {
     font-size: 50px;
   }
 
+  a.replog_main {
+    text-decoration: none;
+    color: white;
+    text-shadow: 2px 2px black;
+  }
+
   .wrapper_main {
       background-color: #fdfdfa;
       height: 450px;
@@ -254,7 +260,7 @@ button.sign_up {
     font-family: "Quicksand", sans-serif;
     background-color: #d77029;
     font-size: 21px;
-    width: 100px;
+    width: 200px;
     font-weight: 100;
     color: white;
     border-radius: 10px;
