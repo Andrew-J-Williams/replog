@@ -1,6 +1,6 @@
 body {
     background: url("https://storage.needpix.com/rsynced_images/herringbone-2091172_1280.jpg");
-    background-color: #eaebee;
+    background-color: black;
     background-size: cover;
   }
 
@@ -43,6 +43,31 @@ body {
       font-weight: 300;
       padding-top: 50px;
       opacity: 100%;
+  }
+
+  a.welcome_button {
+    text-align: center;
+    display: inline-block;
+    background-color: #d77029;
+    height: 50px;
+    width: 400px;
+    padding-top: 20px;
+    font-size: 25px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 100;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    opacity: 100%;
+    transition: 0.3s;
+  }
+
+  a.welcome_button:hover {
+    background-color: white;
+    color: #d77029;
+    border-style: solid;
+    border-color: #d77029;
+    border-width: 1px;
   }
 
   a.start_button_1 {
@@ -94,3 +119,97 @@ body {
     border-color: #d77029;
     border-width: 1px;
   }
+
+  .wrapper_sign_in {
+    background-color: #fdfdfa;
+    height: 500px;
+    width: 600px;
+    margin: 0 auto;
+    opacity: 100%;
+    text-align: center;
+    opacity: 90%;
+    
+}
+
+h3.sign_in {
+    padding-top: 30px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 30px;
+    font-weight: 100;
+    padding-top: 45px;
+}
+
+form.form_log_in {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 100;
+}
+
+label.label_log_in_1 {
+    padding-right: 260px;
+}
+
+label.label_log_in_2 {
+    padding-right: 231px;
+}
+
+input[type=text] {
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+}
+
+
+input.box_sign_in {
+    height: 30px;
+    width: 300px;
+}
+
+.question p {
+    font-family: "Quicksand", sans-serif;
+    font-size: 25px;
+    font-weight: 100;
+}
+
+div.question{
+    padding-bottom: 50px;
+}
+
+button.button_1 {
+    font-family: "Quicksand", sans-serif;
+    background-color: #d77029;
+    font-size: 21px;
+    width: 100px;
+    font-weight: 100;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+}
+
+button.button_1:hover {
+    background-color: white;
+    color: #d77029;
+    border-style: solid;
+    border-color: #d77029;
+    border-width: 1px;
+}
+
+
+button.button_2 {
+    font-family: "Quicksand", sans-serif;
+    background-color: #d77029;
+    font-size: 21px;
+    width: 100px;
+    font-weight: 100;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+}
+
+button.button_2:hover {
+    background-color: white;
+    color: #d77029;
+    border-style: solid;
+    border-color: #d77029;
+    border-width: 1px;
+}

@@ -1,11 +1,11 @@
 
 <div class="wrapper_main">
-    <h3 class="grow">Start Growing Your Connections</h3><br>
+    <h3 class="grow">Start Growing Your Connections!</h3><br>
 
     <img src="https://flyingclouddesignshop.com/wp-content/uploads/2016/07/tree-circle-logo-v2-01.jpg" height="80px" width="80px"><br><br>
 
     <%if logged_in?%>
-        <a href="/customers">Enter Profile</a>
+        <a href="/customers" class="welcome_button">Welcome, <%=@current_user.username%>!</a>
     <%else%>
         <a href="/login" class="start_button_1"> Log In </a><br><br>
         <a href="/signup" class="start_button_2"> Sign Up </a>
