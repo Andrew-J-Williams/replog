@@ -11,7 +11,7 @@ body {
     margin-left: 20px;
     font-style: italic;
     font-family: "Montserrat", sans-serif;
-    font-size: 40px;
+    font-size: 50px;
   }
 
   .wrapper_main {
@@ -21,16 +21,15 @@ body {
       margin: 0 auto;
       opacity: 100%;
       text-align: center;
-      opacity: 80%;
+      opacity: 90%;
   }
 
   .wrapper_main .grow {
       text-align: center;
-      font-size: 33px;
+      font-size: 35px;
       font-family: "Quicksand", sans-serif;
       font-weight: 300;
-      padding-top: 70px;
-      padding-bottom: 100px;
+      padding-top: 50px;
       opacity: 100%;
   }
 
@@ -43,8 +42,41 @@ body {
     padding-top: 15px;
     font-size: 25px;
     font-family: "Quicksand", sans-serif;
+    font-weight: 100;
     color: white;
     text-decoration: none;
     border-radius: 25px;
     opacity: 100%;
+  }
+
+  a.start_button_2 {
+    text-align: center;
+    display: inline-block;
+    background-color: #d77029;
+    height: 50px;
+    width: 300px;
+    padding-top: 15px;
+    font-size: 25px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 100;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    opacity: 100%;
+  }
+
+  a.start_button_1:hover {
+    background-color: white;
+    color: #d77029;
+    border-style: solid;
+    border-color: #d77029;
+    border-width: 1px;
+  }
+
+  a.start_button_2:hover {
+    background-color: white;
+    color: #d77029;
+    border-style: solid;
+    border-color: #d77029;
+    border-width: 1px;
   }
