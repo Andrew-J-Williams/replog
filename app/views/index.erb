@@ -1,8 +1,11 @@
-<h3>Start Growing Your Connections!</h3><br>
 
-<%if logged_in?%>
-    <a href="/customers">Enter Profile</a>
-<%else%>
-    <a href="/login" class="start_button"> Log In </a><br><br>
-    <a href="/signup" class="start_button"> Sign Up </a>
-<%end%>
+<div class="wrapper_main">
+    <h3 class="grow">Start Growing Your Connections</h3><br>
+
+    <%if logged_in?%>
+        <a href="/customers">Enter Profile</a>
+    <%else%>
+        <a href="/login" class="start_button_1"> Log In </a><br><br>
+        <a href="/signup" class="start_button_2"> Sign Up </a>
+    <%end%>
+</div>
