@@ -1,11 +1,17 @@
+<div class="wrapper_user">
+
+
 <h2> Edit Customer </h2>
 
 <form method="post" action="/customers/<%=@customer.id%>">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
-  <input type="text" name="name" value="<%= @customer.name %>">
-  <input type="text" name="address" value="<%= @customer.address %>">
-  <input type="text" name="phone" value="<%= @customer.phone %>">
-  <input type="text" name="date_created" value="<%= @customer.date_created %>">
-  <input type="text" name="note" value="<%= @customer.note %>">
-  <input id="submit" type="submit" value="Submit">
+  <input class="box_sign_in" type="text" name="name" value="<%= @customer.name %>"><br><br>
+  <input class="box_sign_in" type="text" name="address" value="<%= @customer.address %>"><br><br>
+  <input class="box_sign_in" type="text" name="phone" value="<%= @customer.phone %>"><br><br>
+  <input class="box_sign_in" type="text" name="date_created" value="<%= @customer.date_created %>"><br><br>
+  <input class="box_sign_in" type="text" name="note" value="<%= @customer.note %>"><br><br>
+  <br>
+  <button type="submit" class="sign_up">Submit Changes</button>
 </form>
+
+</div>

@@ -32,3 +32,7 @@ a.customers {
 a.customers:hover {
     text-shadow: 1px 1px #742e00;
 }
+
+h2.user_new {
+    font-size: 45px;
+}

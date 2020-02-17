@@ -64,13 +64,15 @@ class CustomersController < ApplicationController
         end
     end
 
-    post '/customers/:id/delete' do
+    delete '/customers/:id/delete' do
         if logged_in?
-          @customer = Customer.find_by(params[:id])
-          @customer.delete
-          redirect to '/customers'
-        else
-          redirect to '/login'
+          @customer = Customer.find_by(:id => params[:id])
+          if current_user.id == @customer.user_id
+            @customer.delete
+            redirect to '/customers'
+          else
+            redirect to '/login'
+          end
         end
     end
 

@@ -1,24 +1,24 @@
-<div class="wrapper_main">
+<div class="wrapper_user">
 
-<h2><%=@customer.name%></h2>
+<h3 class="user_name"><%=@customer.name%></h3>
+<h5 class="user_name">Address: <%=@customer.address%></h5>
+<br>
+<h5 class="user_name">Phone: <%=@customer.phone%></h5>
+<br>
+<h5 class="user_name">Date Added: <%=@customer.date_created%></h5>
+<br>
+<h5 class="user_name">Notes: <%=@customer.note%></h5>
+<br>
+
+<br>
+<a href="/customers"><button class="sign_up">Return to Profile</button></a>
+<a href="/customers/<%=@customer.id%>/edit"><button class="sign_up">Edit Customer</button></a>
 <br><br>
-<h4>Address: <%=@customer.address%></h4>
-<br>
-<h4>Phone: <%=@customer.phone%></h4>
-<br>
-<h4>Date Added: <%=@customer.date_created%></h4>
-<br>
-<h4>Notes: <%=@customer.note%></h4>
-<br>
-
-<form action="/customers/<%=@customer.id%>/edit">
-    <input type="submit" value="Edit Customer">
-</form>
-
-<br><br>
-
 <form method="POST" action="/customers/<%=@customer.id%>/delete">
-  <input type="submit" value="Delete Customer">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <button type="submit" class="sign_up">Delete Customer</button>
 </form>
+
+<br><br><br>
 
 </div>
