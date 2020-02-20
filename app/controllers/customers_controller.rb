@@ -28,10 +28,18 @@ class CustomersController < ApplicationController
 
     post '/customers' do
         if logged_in?
-            @customer = current_user.customers.create(:name => params[:name], :address => params[:address], :phone => params[:phone], :date_created => params[:date_created], :note => params[:note])
-            redirect "/customers"
+            if params[:name] == ""
+                flash[:message] = "ERROR! You cannot leave the 'name' field blank."
+                redirect to '/customers/new'
+            elsif Customer.exists?(:name => params[:name])
+                flash[:message] = "ERROR! Customer already exists with that name."
+                redirect to '/customers/new'
+            else
+                @customer = current_user.customers.create(:name => params[:name], :address => params[:address], :phone => params[:phone], :date_created => params[:date_created], :note => params[:note])
+                redirect '/customers'
+            end
         else
-            erb '/customers/create'
+            redirect to '/login'
         end
     end
 

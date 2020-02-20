@@ -3,6 +3,11 @@
 
 <h2> Edit Customer </h2>
 
+<% if flash.has?(:message) %>
+    <b><font color="red"><%= flash[:message] %></font></b>
+    <br><br>
+<% end %>
+
 <form method="post" action="/customers/<%=@customer.id%>">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
   <input class="box_sign_in" type="text" name="name" value="<%= @customer.name %>"><br><br>

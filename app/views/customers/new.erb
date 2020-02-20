@@ -1,6 +1,12 @@
 <div class="wrapper_user">
 
 <h2 class="user_new">Create Customer</h2>
+
+<% if flash.has?(:message) %>
+    <b><font color="red"><%= flash[:message] %></font></b>
+    <br><br>
+<% end %>
+
 <form class="user_new" action='/customers' method='POST'>    
     <label for="name">Name:</label>
         <input type="text" id="name" name="name"><br><br>
