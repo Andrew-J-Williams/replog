@@ -2,6 +2,11 @@
 
 <h3 class="sign_in">Log In to RepLog</h3>
 
+<% if flash.has?(:message) %>
+    <b><font color="red" style="font-family:Quicksand;"><%= flash[:message] %></font></b>
+    <br><br>
+<% end %>
+
 <form action="/login" method="POST" class="form_log_in">
   <label for="email" class="label_log_in_1">Email</label><br>
     <input type="text" name="email" class="box_sign_in"><br><br>

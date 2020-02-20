@@ -9,8 +9,12 @@ class UsersController < ApplicationController
         if @user.save
             session[:user_id] = @user.id
             redirect to "/customers"
+        elsif params[:username] == "" || params[:email] == "" || params[:password] == ""
+            flash[:message] = "INVALID SIGN UP. Please leave no fields blank."
+            redirect to '/signup'
         else
-            erb :'users/signup'
+            flash[:message] = "Account already exists for username or email. Please log in."
+            redirect to '/login'
         end
     end
 
@@ -24,7 +28,8 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect '/customers'
           else
-            redirect '/signup'
+            flash[:message] = "Sorry, invalid log in! Please try again."
+            redirect to '/login'
         end
     end
 
