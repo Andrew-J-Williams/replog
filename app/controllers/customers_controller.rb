@@ -11,9 +11,9 @@ class CustomersController < ApplicationController
     
     get '/customers/new' do 
         if logged_in?
-            erb :"/customers/new"
+            erb :"/customers/new" #Renders a file (erb)
         else
-            redirect to '/login'
+            redirect to '/login' #Sends a HTTP request (redirect)
         end
     end
 
@@ -27,16 +27,14 @@ class CustomersController < ApplicationController
     end
 
     post '/customers' do
+       
         if logged_in?
-            if params[:name] == ""
-                flash[:message] = "ERROR! You cannot leave the 'name' field blank."
-                redirect to '/customers/new'
-            elsif Customer.exists?(:name => params[:name])
-                flash[:message] = "ERROR! Customer already exists with that name."
-                redirect to '/customers/new'
+            @customer = current_user.customers.create(:name => params[:name], :address => params[:address], :phone => params[:phone], :date_created => params[:date_created], :note => params[:note])
+            if @customer.save
+                redirect to '/customers'
             else
-                @customer = current_user.customers.create(:name => params[:name], :address => params[:address], :phone => params[:phone], :date_created => params[:date_created], :note => params[:note])
-                redirect '/customers'
+                flash[:message] = "Customer already exists or entry is invalid. Please try again."
+                redirect to '/customers/new'
             end
         else
             redirect to '/login'
@@ -49,7 +47,7 @@ class CustomersController < ApplicationController
             if current_user.id == @customer.user_id
                 erb :"customers/edit"
             else
-                redirect to '/login'
+                redirect to '/customers'
             end
         end
     end
