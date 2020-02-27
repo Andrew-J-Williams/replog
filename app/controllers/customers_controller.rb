@@ -2,7 +2,7 @@ class CustomersController < ApplicationController
 
     get '/customers' do
         if logged_in?
-            @customers = current_user.customers.order(:name)
+            @customers = current_user.customers.order(:name) #Using 'order' will display the defined parameter in ascending order by default
             erb :'customers/index'
         else
             redirect to '/signup'
@@ -47,6 +47,7 @@ class CustomersController < ApplicationController
             if current_user.id == @customer.user_id
                 erb :"customers/edit"
             else
+                flash[:message] = "ERROR. Customer belongs to a different user."
                 redirect to '/customers'
             end
         end
@@ -61,8 +62,9 @@ class CustomersController < ApplicationController
           @customer.date_created = params[:date_created]
           @customer.note = params[:note]
           if @customer.save
-            redirect to '/customers'
+            redirect to "/customers/#{@customer.id}"
           else
+            flash[:message] = "ERROR. Your changes could not be saved."
             redirect to "/customers/#{@customer.id}/edit"
           end
         else
